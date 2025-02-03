@@ -9,6 +9,10 @@ app.get("/",(req,res)=>{
     })
 })
 app.get("/car",(req,res)=>{
+    fs.writeFile("./data.txt","wow",(err,data)=>{
+        if(err) res.send("there is an error to write file!")
+            res.send(data)
+    })
     res.end("Car Details there ")
 })
 app.listen(8000,()=>{
